@@ -9,11 +9,12 @@ import {Feather} from '@expo/vector-icons';
 
 import {DashboardScreen, CoursesScreen, TimetableScreen} from './screens';
 import Sidebar from './components/Sidebar';
-
+import DrawerComponent from './components/DrawerComponent';
 const DrawerNavigator = createDrawerNavigator();
 function MyDrawer() {
   return (
-    <DrawerNavigator.Navigator initialRouteName="Home"
+    <DrawerNavigator.Navigator drawerContent={ props => <DrawerComponent {...props}/>}
+      initialRouteName="Home"
     >
       <DrawerNavigator.Screen name="Dashboard" component={DashboardScreen} />
       <DrawerNavigator.Screen name="Courses" component={CoursesScreen} />
