@@ -7,7 +7,8 @@ import { Dimensions } from 'react-native';
 
 import {Feather} from '@expo/vector-icons';
 
-import {DashboardScreen, CoursesScreen, TimetableScreen} from './screens';
+import {Dashboard, CoursesScreen, TimetableScreen} from './screens';
+import DashboardScreen from "./screens/DashboardScreen.js";
 import Sidebar from './components/Sidebar';
 import DrawerComponent from './components/DrawerComponent';
 const DrawerNavigator = createDrawerNavigator();
