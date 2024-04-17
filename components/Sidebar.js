@@ -11,6 +11,7 @@ export default Sidebar = props => (
                 <Image source={require("../assets/icon.png")} style={styles.profile}>
                 </Image>
         <Text style={styles.name}> ANNE</Text>
+        <Text style={styles.name}> Student</Text>
             </DrawerContentScrollView>
         </View>
     </ScrollView>
