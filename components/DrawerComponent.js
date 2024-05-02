@@ -9,8 +9,7 @@ const DrawerComponent = (props) =>
                 <DrawerItemList {...props}></DrawerItemList>
             </DrawerContentScrollView>
             <View>
-            <Image source={require("../assets/icon.png")} style={styles.profile}>
-                </Image>
+            <Image source={require("../assets/avatar.png")} style={styles.profile} />
                 <Text> ANNE Student</Text>
             </View>
         </View>

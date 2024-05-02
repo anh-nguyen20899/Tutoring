@@ -8,7 +8,7 @@ export default Sidebar = props => (
         <View>
             <DrawerContentScrollView {...props}>
                 <DrawerItemList {...props}></DrawerItemList>
-                <Image source={require("../assets/icon.png")} style={styles.profile}>
+                <Image source={require("../assets/avatar.png")} style={styles.profile}>
                 </Image>
         <Text style={styles.name}> ANNE</Text>
         <Text style={styles.name}> Student</Text>

@@ -8,7 +8,7 @@ export default class Screens extends React.Component {
             <View style={styles.container}>
                 <SafeAreaView style = {{flex: 1}}>
                     <TouchableOpacity style={{alignItems: "flex-end" , margin: 16}} onPress={this.props.navigation.openDrawer}>
-                        <FontAwesome5 name="bars" size={24} color="#161924"/>
+                        <FontAwesome5 name="bars" size={24} color="#66c2ff"/>
                     </TouchableOpacity>
                     <View style={{flex: 1, alignItems:"center", justifyContent: "center"}}>
                         <Text style={styles.text}>
