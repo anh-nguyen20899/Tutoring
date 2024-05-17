@@ -15,7 +15,7 @@ const Schedule = (props) =>
                 <View style={styles.itemRow}>
                     {date.map((item, dateIndex) => {
                         return(
-                            <TouchableWithoutFeedback>
+                            <TouchableWithoutFeedback key={dateIndex}>
                                 <View style={styles.item}>
                                     <Text>
                                         {item.weekday}

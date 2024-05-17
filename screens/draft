@@ -1,81 +1,18 @@
-// SearchBar.js
-import React from "react";
-import { StyleSheet, TextInput, View, Keyboard, Button } from "react-native";
-import { Feather, Entypo } from "@expo/vector-icons";
-
-const SearchBar = ({ clicked, searchPhrase, setSearchPhrase, setCLicked }) => {
-   return (
-      <View style={styles.container}>
-         <View style={clicked ? styles.searchBar__clicked : styles.searchBar__unclicked}>
-            <Feather name="search" size={20} color="black" style={{ marginLeft: 1 }} />
-
-            <TextInput
-               style={styles.input}
-               placeholder="Search"
-               value={searchPhrase}
-               onChangeText={setSearchPhrase}
-               onFocus={() => {
-                  setClicked(true);
-               }}
-            />
-
-            {clicked && (
-               <Entypo
-                  name="cross"
-                  size={20}
-                  color="black"
-                  style={{ padding: 1 }}
-                  onPress={() => {
-                     setSearchPhrase("");
-                  }}
-               />
-            )}
-         </View>
-
-         {clicked && (
-            <View>
-               <Button
-                  title="Cancel"
-                  onPress={() => {
-                     Keyboard.dismiss();
-                     setClicked(false);
-                  }}></Button>
-            </View>
-         )}
-      </View>
-   );
-};
-export default SearchBar;
-
-// styles
-const styles = StyleSheet.create({
-   container: {
-      margin: 15,
-      justifyContent: "flex-start",
-      alignItems: "center",
-      flexDirection: "row",
-      width: "90%",
-   },
-   searchBar__unclicked: {
-      padding: 10,
-      flexDirection: "row",
-      width: "95%",
-      backgroundColor: "#d9dbda",
-      borderRadius: 15,
-      alignItems: "center",
-   },
-   searchBar__clicked: {
-      padding: 10,
-      flexDirection: "row",
-      width: "80%",
-      backgroundColor: "#d9dbda",
-      borderRadius: 15,
-      alignItems: "center",
-      justifyContent: "space-evenly",
-   },
-   input: {
-      fontSize: 20,
-      marginLeft: 10,
-      width: "90%",
-   },
-});
+// {
+//    "_id": "66166f259c7c3ac3eef23c6a",
+//    "eventID": 2,
+//    "day": "Monday",
+//    "startTime": "2024-04-15T22:34:39.263Z",
+//    "status": "planned",
+//    "description": "Geography tutoring session",
+//    "endTime": "2024-04-16T20:34:39.263Z"
+//  },
+//  {
+//    "_id": "66166f259c7c3ac3eef23c6d",
+//    "eventID": 5,
+//    "day": "Monday",
+//    "startTime": "2024-04-23T22:34:39.263Z",
+//    "status": "in progress",
+//    "description": "Math tutoring session",
+//    "endTime": "2024-04-24T12:34:39.263Z"
+//  },
