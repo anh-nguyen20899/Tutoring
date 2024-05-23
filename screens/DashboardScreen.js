@@ -22,13 +22,11 @@ const DashboardScreen = ({navigation}) =>
     const dayName = daysOfWeek[dayOfWeek - 1];
     
     const [todos, setTodos] = useState([
-        {'id': 1, 'day': 'Monday', 'startTime': '7:00', 'title': 'Math', 'endTime': '8:20', 'details': 'Learning Algebra'},
-        {'id': 2, 'day': 'Monday', 'startTime': '10:40', 'title': 'English', 'endTime': '13:20', 'details': 'Expanding Vocabularies'},
-        {'id': 3, 'day': 'Tuesday', 'startTime': '13:00', 'title': 'Biology', 'endTime': '15:40', 'details': ''}
+        {'id': 1, 'day': 'sat', 'startTime': '9:00', 'title': 'Biology', 'endTime': '9:20', 'details': 'Learning Biology'}
     ]);
     const [weekDuration, setweekDuration] = useState(0);
 const Item = ({item}) => (
-    <View key={item.id} style={{backgroundColor: (item.id % 2 == 0) ? 'darkorange': 'red', flexDirection: 'column', padding: 10, display: (item.day == 'thu') ? 'block': 'none'}}> 
+    <View key={item.id} style={{backgroundColor: (item.id % 2 == 0) ? 'darkorange': 'red', flexDirection: 'column', padding: 10, display: (item.day == 'sat') ? 'block': 'none'}}> 
         <Text> {item.id} </Text>
         <View>
             <Text style={styles.innerText}> {new Date(item.startTime).toLocaleTimeString()} {item.title}</Text>
@@ -140,7 +138,7 @@ const renderWeeklyPlan = ({ item }) => (
                 },
                 ]}>
                 <View style={{backgroundColor: 'white', height:50}} >
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={getSchedules}>
                         <Text style={styles.baseText}> Today </Text>
                     </TouchableOpacity>
                 </View>

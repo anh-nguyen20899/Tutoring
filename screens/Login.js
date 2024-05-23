@@ -77,8 +77,6 @@ const Login = () =>
                     onChange={e => handleName(e)}
                 />
                 {accountVerify && <Text>Email is required</Text>}
-                <Text>{account}
-                  </Text>
                 <TextInput
                     style={styles.textInput}
                     placeholder='Enter Password'
@@ -88,8 +86,6 @@ const Login = () =>
                     onChange={(e) => {handlePassword(e)}}
                 />
                 
-                <Text>{password}
-                  </Text>
                 <View style={styles.button}>
                     <TouchableOpacity onPress={handleSubmit}>
                         <Text style={styles.textSign}> Log In </Text>

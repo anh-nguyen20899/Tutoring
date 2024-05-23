@@ -153,6 +153,33 @@ const TimetableScreen = ({}) =>
             // Alert.alert("Success", `Form submitted!\nName: ${name}\nDetail: ${details}\nStart Time: ${formatTime(startTime)}\nEnd Time: ${formatTime(endTime)}`);         
           }
     };
+    const handleDelete = async () => {
+        try {   
+                const token = await AsyncStorage.getItem('token');
+                const response = await fetch(`https://ict729.fly.dev/api/schedules/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
+                });
+                const json = await response.json();
+                // console.log(updatedTodo);
+                const updatedTodos = todos.map((todo) =>
+                    todo._id == id ? {} : todo
+                  );
+                // console.log(updatedTodos);
+                setTodos(updatedTodos);
+                if(json) {
+                    Alert.alert("Success", `Delelted!\nName: ${name}\nDetail: ${details}\nStart Time: ${startTime}\nEnd Time: ${endTime}`);
+                    setModalVisible(false);
+                }
+        }
+        catch (error) {
+            console.error(error);
+        } finally {               
+        }
+    };
     const sendTodo = async() => {
         try {
             const start = new Date(startTime);
@@ -340,6 +367,9 @@ const TimetableScreen = ({}) =>
                             </SafeAreaView>
                             <Pressable style={[styles.button, styles.buttonClose]}onPress={handleSubmit} >
                                 <Text style={styles.text}>Update</Text>
+                            </Pressable>
+                            <Pressable style={[styles.button, styles.buttonClose]}onPress={handleDelete} >
+                                <Text style={styles.text}>Delete</Text>
                             </Pressable>
                             <Pressable
                                 style={[styles.button, styles.buttonClose]}

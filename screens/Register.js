@@ -19,6 +19,12 @@ const Register = () =>
                     maxLength={40}
                     placeholder='Name'
                 />
+                <TextInput
+                    style={styles.textInput}
+                    editable
+                    maxLength={40}
+                    placeholder='Email'
+                />
 
                 <TextInput
                     style={styles.textInput}
